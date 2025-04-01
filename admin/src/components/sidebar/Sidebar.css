@@ -1,0 +1,95 @@
+/* Main container for sidebar & content */
+
+
+.cursor{
+  cursor: pointer;
+}
+
+
+
+/* Sidebar Default (Open) */
+.sidebar {
+  padding-top: 100px;
+  width: 250px;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: width 0.3s ease-in-out;
+  box-shadow: 3px 0px 10px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  z-index: 1000;
+}
+
+/* Sidebar Closed */
+.sidebar.closed {
+  width: 60px;
+}
+
+/* Sidebar Options */
+.sidebar-options {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding-top: 50px;
+}
+
+/* Sidebar Option */
+.sidebar-option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  cursor: pointer;
+  text-decoration: none;
+  color: white;
+  transition: all 0.3s ease-in-out;
+}
+.sidebar-option:hover {
+  background: rgba(16, 226, 76, 0.3);
+  transform: translateX(8px);
+  box-shadow: 2px 2px 8px rgba(123, 237, 100, 0.3);
+}
+
+/* Hide Text When Sidebar is Closed */
+.sidebar.closed .sidebar-option p {
+  display: none;
+}
+
+/* Toggle Button */
+.toggle-btn {
+  padding-top: 10px;
+  position: absolute;
+  top: 80px;
+  right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+  color: white;
+}
+
+/* Main Content */
+.main-content {
+  flex-grow: 1;
+  padding: 20px;
+  margin-left: 250px; /* Default margin when sidebar is open */
+  color: rgb(26, 21, 21);
+  transition: margin-left 0.3s ease-in-out;
+}
+
+/* When Sidebar is Closed */
+.main-content.closed {
+  margin-left: 60px;
+}
+
+/* Responsive Design - Mobile View */
+@media (max-width: 900px) {
+  .sidebar {
+    width: 60px;
+  }
+
+  .main-content {
+    margin-left: 60px;
+  }
+}
