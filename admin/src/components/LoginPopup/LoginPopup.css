@@ -1,0 +1,164 @@
+/* Full-screen background overlay */
+.login-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Dark overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Popup Container */
+.login-popup-container {
+  width: max(25vw, 350px);
+  color: #505050;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 25px 30px;
+  border-radius: 10px;
+  font-size: 14px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transform: translateY(-20px);
+  animation: slideIn 0.5s ease-in-out forwards;
+}
+
+/* Popup Title */
+.login-popup-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: black;
+  font-weight: bold;
+}
+
+/* Close Icon */
+.login-popup-title img {
+  width: 18px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.login-popup-title img:hover {
+  transform: rotate(180deg);
+}
+
+/* Input Fields */
+.login-popup-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.login-popup-inputs input {
+  outline: none;
+  border: 1px solid #c9c9c9;
+  padding: 10px;
+  border-radius: 6px;
+  transition: all 0.3s ease-in-out;
+  font-size: 14px;
+}
+
+/* Input Focus Effect */
+.login-popup-inputs input:focus {
+  border: 1px solid #1e441e;
+  box-shadow: 0 0 5px rgba(30, 68, 30, 0.4);
+}
+
+/* Button */
+.login-popup-container button {
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
+  color: white;
+  background-color: #1e441e;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Button Hover Effect */
+.login-popup-container button:hover {
+  background-color: #163516;
+  transform: scale(1.05);
+}
+
+/* Terms & Conditions */
+.login-popup-condition {
+  display: flex;
+  align-items: start;
+  gap: 8px;
+  margin-top: -10px;
+  font-size: 13px;
+  color: #505050;
+}
+
+/* Checkbox */
+.login-popup-condition input {
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+/* Link Styling */
+.login-popup p span {
+  color: #1e441e;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+}
+
+.login-popup p span:hover {
+  color: #0f2a0f;
+  text-decoration: underline;
+}
+
+/* Animation Effects */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-30px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+/* 📱 Mobile Responsiveness */
+@media (max-width: 600px) {
+  .login-popup-container {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .login-popup-title img {
+    width: 16px;
+  }
+
+  .login-popup-inputs input {
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  .login-popup-container button {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .login-popup p {
+    font-size: 13px;
+  }
+}
